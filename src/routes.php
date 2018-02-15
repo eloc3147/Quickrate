@@ -77,8 +77,6 @@ $app->get('/api/photo/{album}/{id}/{password}/{index}', function (Request $reque
         $response = $response->withHeader('Content-Type', 'application/octet-stream');
         $response = $response->withHeader('Content-Disposition', 'attachment;filename="'.$photo['display_name'].'"');
         $response = $response->withHeader('Cache-Control', 'max-age=31536000');
-        $response = $response->withHeader('Cache-Control', 'immutable');
-        $response = $response->withHeader('Cache-Control', 'private');
         $response = $response->withHeader('Content-Length', filesize($file));
         $filestream = new \GuzzleHttp\Psr7\LazyOpenStream($file, 'r');
         $response = $response->withBody($filestream);
