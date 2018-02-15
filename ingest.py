@@ -34,7 +34,7 @@ album_dir = os.path.join(photo_dir, album_id)
 os.makedirs(album_dir)
 
 # Process photos
-for photo in os.listdir(src_dir):
+for photo in sorted(os.listdir(src_dir)):
     photo_id = str(uuid.uuid4()).upper()
 
     original_name = os.path.split(photo)[1]
