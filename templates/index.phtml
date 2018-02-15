@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Quickrate</title>
+    </head>
+    <body>
+        <div id="menu">
+            <h1>Quickrate</h1>
+            <h5>Enter a password below or choose a album from the list below</h5>
+            <form>
+                <input type="text" id="password" autofocus pattern="[A-F0-9]{8}-([A-F0-9]{4}-){3}[A-F0-9]{12}#.*" oninvalid="this.setCustomValidity('This password does not appear to be valid')" oninput="setCustomValidity('')">
+                <input type="submit" value="Go" id="submit-password">
+            </form>
+            <div id="known-list">
+            </div>
+        </div>
+        <div id="viewer" style="display:none">
+            <img id="picture">
+            <img id="like" src="ic_favorite_white_36px.svg" style="display:none">
+        </div>
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js" integrity="sha256-9Nt2r+tJnSd2A2CRUvnjgsD+ES1ExvjbjBNqidm9doI=" crossorigin="anonymous"></script>
+        <script type="application/javascript" src="script.js"></script>
+    </body>
+</html>
