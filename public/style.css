@@ -41,3 +41,30 @@ a {
     bottom: 4%;
 
 }
+
+#list {
+    word-wrap: normal;
+}
+
+.line-item:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    float: left;
+    margin: 0 2px 0 0;
+}
+
+.line-item {
+    margin: 4px;
+    display: inline-block;
+    width: 140px;
+}
+
+.like:before {
+    background: url("ic_check_black_24px.svg");
+}
+
+.dislike:before {
+    background: url("ic_close_black_24px.svg");
+}

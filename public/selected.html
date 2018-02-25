@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Selected</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="menu">
+        <h1>Quickrate</h1>
+        <h5>Enter a password below or choose a album from the list below</h5>
+        <form>
+            <input type="text" id="password" autofocus pattern="[A-F0-9]{8}-([A-F0-9]{4}-){3}[A-F0-9]{12}#.*" oninvalid="this.setCustomValidity('This password does not appear to be valid')" oninput="setCustomValidity('')">
+            <input type="submit" value="Go" id="submit-password">
+        </form>
+        <div id="list">
+        </div>
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" async>
+    <link rel="stylesheet" type="text/css" href="style.css" async>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" async>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="selected.js"></script>
+</body>
+</html>

@@ -111,3 +111,30 @@ $app->post('/api/rate', function (Request $request, Response $response, array $a
     // Render index view
     return $response->withJson(["success" => true]);
 });
+
+$app->post('/api/selected', function (Request $request, Response $response, array $args) {
+    $params = $request->getParsedBody();
+    $data_string = file_get_contents(__DIR__ . '/../data/photo_data.json');
+    $photo_data = json_decode($data_string, true);
+
+    $id = explode("#", $params['password_string'])[0];
+    $password = explode("#", $params['password_string'])[1];
+
+    if(!array_key_exists($id, $photo_data)) {
+        return $response->withJson(["error" => "Album not found"]);
+    }
+    $album = $photo_data[$id];
+
+    if($album["password"] != $password) {
+        return $response->withJson(["error" => "Incorrect password"]);
+    }
+
+    $results = [];
+    foreach($album['photos'] as $photo) {
+        array_push($results, [
+            'like' => $photo['like'],
+            'filename' => $photo['filename']
+        ]);
+    }
+    return $response->withJson(['photos' => $results]);
+});
