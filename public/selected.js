@@ -21,6 +21,15 @@ $(document).ready(function(){
                 for(i=0;i<data['photos'].length;i++) {
                     $('<span class="line-item ' + (data['photos'][i]['like']? 'like': 'dislike') + '">' + data['photos'][i]['filename'] + '</span>').appendTo(listContainer);
                 }
+                $('<a>', {
+                    href: 'data:text/plain;charset=utf-8,' +
+                          encodeURIComponent(JSON.stringify(data['photos']
+                          .map(function(x) {return {filename: x.filename,
+                                                    like: x.like}}))),
+                    download: 'selected_data.json',
+                    target: '_blank',
+                    text: 'Download data as json'
+                }).appendTo($('#form'));
             }
         });
     });

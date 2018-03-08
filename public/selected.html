@@ -10,7 +10,7 @@
     <div id="menu">
         <h1>Quickrate</h1>
         <h5>Enter a password below or choose a album from the list below</h5>
-        <form>
+        <form  id="form">
             <input type="text" id="password" autofocus pattern="[A-F0-9]{8}-([A-F0-9]{4}-){3}[A-F0-9]{12}#.*" oninvalid="this.setCustomValidity('This password does not appear to be valid')" oninput="setCustomValidity('')">
             <input type="submit" value="Go" id="submit-password">
         </form>
